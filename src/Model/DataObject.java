@@ -15,13 +15,12 @@ public class DataObject implements Subject {
     public DataObject(){
         observers=new ArrayList();
     }
-    /* Register observer*/
+
     @Override
     public void registerObserver(Observer o) {
         observers.add(o);
     }
 
-/* If observer want to deregister We can remove this observer from observers list */
     @Override
     public void deleteObserver(Observer o) {
         int indexOfObservator = observers.indexOf(o);
@@ -30,7 +29,7 @@ public class DataObject implements Subject {
         }
     }
 
-    /* Notify all observers from list*/
+
     @Override
     public void notifyObserver() {
         for (int i = 0; i < observers.size(); i++) {
